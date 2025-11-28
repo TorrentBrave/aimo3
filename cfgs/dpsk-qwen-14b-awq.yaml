@@ -1,0 +1,32 @@
+main_model:
+  model_cfg:
+    model_path: models/dpsk-qwen-14b-awq
+    gpu_indices: [0, 1]
+  inference_cfg:
+    max_batch_size: 32
+    quant_policy: 8 # 0: fp16
+    enable_prefix_caching: true
+    cache_max_entry_count: 0.95
+    max_prefill_token_num: 8192
+    gen_max_new_tokens: 32768
+
+actor:
+  actor_cls: BasicActor
+  model_dict:
+    main_model: main_model
+  prompt_list_combine: "interleave"
+  prompt_list:
+    - system: "You are a helpful math assistant. Please reason step by step to put the answer in \\boxed{}."
+      user_suffix: "\nYou excel at reasoning.\nYou must put the final answer in \\boxed{}.\nIf the final answer is greater than 1000, then take the modulo of 1000.\nThink carefully and thoroughly, avoid duplication."
+      number: 16
+    - system: "You are a helpful math assistant. Please provide the python code to solve the math problem and also put the final answer in \\boxed{}."
+      user_suffix: "\nYou excel at coding\nYou must provide the python code, avoid redundant analysis.\nIf the final answer is greater than 1000, then take the modulo of 1000.\nThe answer must be integer.\nThere is only one answer for each question.\nImport necessary libraries."
+      number: 16
+  gen_cfg:
+    temperature: 1.0
+    min_p: 0.1
+    skip_special_tokens: true
+    max_new_tokens: 32768
+    top_p: 0.95
+    do_sample: true
+    repetition_penalty: 1.05

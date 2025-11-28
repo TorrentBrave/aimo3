@@ -1,0 +1,16 @@
+- `bash scripts/run_deduplicate.sh`
+  - prepare the sft data
+- `bash scripts/run_filter.sh`
+  - prepare the dpo data
+- `bash scripts/run_sft.sh`
+  - run sft training
+- `bash scripts/run_dpo.sh`
+  - run dpo training
+- `bash scripts/run_quant_awq.sh`
+  - awq quantization for the model
+- `bash scripts/run_quant_rep_kv.sh`
+  - reparametrization awq quantization for the model
+- `bash scripts/run_convert.sh`
+  - convert the model to turbomind format
+- `bash scripts/run_cfg.sh`
+  - run local evaluation

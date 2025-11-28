@@ -1,0 +1,42 @@
+# This script is modefied from the script 'train-sft-stage2.sh' provided by Light-R1 project.
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+hostfile="hostfile.8nodes"
+deepspeed --hostfile $hostfile src/train.py \
+    --stage sft \
+    --do_train \
+    --max_steps -1 \
+    --model_name_or_path /path/to/model/deepseek-r1-distill-qwen-14b \
+    --template qwen \
+    --dataset sft-4k \
+    --preprocessing_num_workers 16 \
+    --finetuning_type full \
+    --sequence_parallel_size 1 \
+    --gradient_checkpointing True \
+    --flash_attn fa2  \
+    --cache_dir .cache \
+    --overwrite_cache \
+    --cutoff_len 18000 \
+    --output_dir /path/to/model/dpsk-14b-sft \
+    --per_device_train_batch_size 2 \
+    --gradient_accumulation_steps 2 \
+    --lr_scheduler_type cosine \
+    --save_strategy epoch \
+    --logging_steps 1 \
+    --adam_beta1 0.9 \
+    --adam_beta2 0.95 \
+    --adam_epsilon 1e-8 \
+    --max_grad_norm 1.0 \
+    --weight_decay 0.1 \
+    --warmup_ratio 0.02 \
+    --save_total_limit 8 \
+    --learning_rate 1e-5 \
+    --save_only_model True \
+    --num_train_epochs 8 \
+    --bf16 true \
+    --plot_loss \
+    --seed 42 \
+    --do_eval false \
+    --deepspeed ./examples/deepspeed/ds_z3_config.json \
+    --report_to tensorboard \
+    --ddp_timeout 180000000 \
+    --enable_liger_kernel \

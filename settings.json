@@ -1,0 +1,1 @@
+{"EVALUATION_DATA_DIR": "./data/", "TRAIN_DATA_PATH": "https://huggingface.co/datasets/imagination-research/aimo2-datasets", "MODEL_CHECKPOINT_DIR": "https://huggingface.co/collections/imagination-research/aimo2-67f92097e2a4e04d995f3d75", "SUBMISSION_DIR": "./imagination_aimo2/"}

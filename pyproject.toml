@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "imagination_aimo2"
+version = "0.0.1"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+# FIXME: have not go through dependencies now
+dependencies = [
+    "tqdm",
+    "pandas",
+    "transformers",
+    "termcolor",
+    "PyYaml",
+    "ipdb",
+    "ipython",
+    "black",
+    "lmdeploy",
+    "tomark", "matplotlib", "seaborn", # for analysis scripts
+    "autoawq", # for run awq quantization (scripts/awq_quantize.py)
+    "partial-json-parser", # for run smoothquant quantization (`lmdeploy lite smoothquant`)
+    "grpcio", "polars" # for use by local_eval_kaggle.py and the kaggle_evaluation module
+]
+
+[project.optional-dependencies]
+dev = ["pre-commit", "black"]
+
+[tool.setuptools.packages.find]
+exclude = ["docs", "dist*", "scripts*", "tests*", "data*", "results*"]
+
+[tool.wheel]
+exclude = ["docs", "dist*", "scripts*", "tests*", "data*", "results*"]

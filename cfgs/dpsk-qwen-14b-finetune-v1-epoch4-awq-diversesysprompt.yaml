@@ -1,0 +1,437 @@
+actor:
+  actor_cls: BasicActor
+  gen_cfg:
+    do_sample: true
+    max_new_tokens: 32768
+    min_p: 0.1
+    repetition_penalty: 1.05
+    skip_special_tokens: true
+    temperature: 1.0
+    top_p: 0.95
+  model_dict:
+    main_model: main_model
+  prompt_list:
+  - system: Please use chained reasoning to put the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: Please use chained reasoning to put the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: Please reflect and verify while reasoning and put the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: Please reflect and verify while reasoning and put the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: Solve the following problem using concise and clear reasoning by placing
+      the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: Solve the following problem using concise and clear reasoning by placing
+      the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: You are a helpful and reflective maths assistant, you reflect on each
+      step of your reasoning. Please reason step by step to put the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: You are a helpful and reflective maths assistant, you reflect on each
+      step of your reasoning. Please reason step by step to put the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: You are the smartest maths expert in the world, please spike this question
+      and put the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: You are the smartest maths expert in the world, please spike this question
+      and put the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: "Scrutinize every logical connection, validate intermediate steps, and\
+      \ conclude with a boxed solution: \boxed{}."
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: "Scrutinize every logical connection, validate intermediate steps, and\
+      \ conclude with a boxed solution: \boxed{}."
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: "Adopt the mindset of a world-class problem-solver: methodically dissect\
+      \ the problem and present the answer in \boxed{}."
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: "Adopt the mindset of a world-class problem-solver: methodically dissect\
+      \ the problem and present the answer in \boxed{}."
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: "Deconstruct the challenge systematically, ensuring coherence at each\
+      \ phase, and finalize with \boxed{}."
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: "Deconstruct the challenge systematically, ensuring coherence at each\
+      \ phase, and finalize with \boxed{}."
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: You are a helpful maths assistant. Please reason step by step to put the
+      answer in \boxed{}.
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: You are a helpful maths assistant. Please reason step by step to put the
+      answer in \boxed{}.
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: Please use chained reasoning to put the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: Please use chained reasoning to put the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: Solve the following problem using concise and clear reasoning by placing
+      the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: Solve the following problem using concise and clear reasoning by placing
+      the answer in \boxed{}.
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: You are a helpful maths assistant. Please reason step by step to put the
+      answer in \boxed{}.
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: You are a helpful maths assistant. Please reason step by step to put the
+      answer in \boxed{}.
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: "Drive your mathematical analysis forward with purpose and certainty,\
+      \ concluding in \boxed{}."
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: "Drive your mathematical analysis forward with purpose and certainty,\
+      \ concluding in \boxed{}."
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: "Develop your solution through focused mathematical steps and place your\
+      \ answer in \boxed{}."
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: "Develop your solution through focused mathematical steps and place your\
+      \ answer in \boxed{}."
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: "Execute your problem-solving strategy with clarity and conviction, presenting\
+      \ the result in \boxed{}."
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: "Execute your problem-solving strategy with clarity and conviction, presenting\
+      \ the result in \boxed{}."
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  - system: You are doing a mathematical competition that require solve following
+      problems in an accurate way. Please put the final answer in \boxed{}.
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - system: You are doing a mathematical competition that require solve following
+      problems in an accurate way. Please put the final answer in \boxed{}.
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  prompt_list_combine: interleave
+main_model:
+  inference_cfg:
+    cache_max_entry_count: 0.95
+    enable_prefix_caching: true
+    gen_max_new_tokens: 32768
+    max_batch_size: 32
+    max_prefill_token_num: 8192
+    quant_policy: 8
+  model_cfg:
+    gpu_indices:
+    - 0
+    - 1
+    model_path: models/dpsk-qwen-14b-finetune-v1-epoch4-awq
