@@ -1,0 +1,57 @@
+actor:
+  actor_cls: BasicActor
+  gen_cfg:
+    do_sample: true
+    max_new_tokens: 8192
+    min_p: 0.1
+    repetition_penalty: 1.05
+    skip_special_tokens: true
+    temperature: 0.9
+    top_p: 0.95
+  model_dict:
+    main_model: main_model
+  prompt_list:
+  - number: 8
+    system: You are a helpful math assistant. Please reason step by step to put the
+      answer in \boxed{}.
+    user_suffix: '
+
+      You excel at reasoning.
+
+      You must put the final answer in \boxed{}.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      Think carefully and thoroughly, avoid duplication.'
+  - number: 8
+    system: You are a helpful math assistant. Please provide the python code to solve
+      the math problem and also put the final answer in \boxed{}.
+    user_suffix: '
+
+      You excel at coding
+
+      You must provide the python code, avoid redundant analysis.
+
+      If the final answer is greater than 1000, then take the modulo of 1000.
+
+      The answer must be integer.
+
+      There is only one answer for each question.
+
+      Import necessary libraries.'
+  prompt_list_combine: interleave
+exam_dataset_files:
+- data/reference_2.csv
+main_model:
+  inference_cfg:
+    cache_max_entry_count: 0.7
+    enable_prefix_caching: true
+    gen_max_new_tokens: 8192
+    max_batch_size: 8
+    max_prefill_token_num: 4096
+    quant_policy: 8
+  model_cfg:
+    gpu_indices:
+    - 0
+    model_path: model/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-1.5B/snapshots/ad9f0ae0864d7fbcd1cd905e3c6c5b069cc8b562
+seed: 42

@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: imagination_aimo2
+Version: 0.0.1
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+License-File: LICENSE
+License-File: LICENSE_NOTE.md
+Requires-Dist: tqdm
+Requires-Dist: pandas
+Requires-Dist: transformers
+Requires-Dist: termcolor
+Requires-Dist: PyYaml
+Requires-Dist: ipdb
+Requires-Dist: ipython
+Requires-Dist: black
+Requires-Dist: lmdeploy
+Requires-Dist: tomark
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: autoawq
+Requires-Dist: partial-json-parser
+Requires-Dist: grpcio
+Requires-Dist: polars
+Provides-Extra: dev
+Requires-Dist: pre-commit; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Dynamic: license-file

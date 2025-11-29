@@ -1,17 +1,17 @@
 **/.DS_Store
 
-results/
+# results/
 gitignoreresults/
 .vscode/
 build/
 bkp/
 
-*.egg-info
+# *.egg-info
 
 *__pycache__/
 cache-*.arrow
 
-*.csv
+# *.csv
 *.jsonl
 *.pkl
 **/.DS_Store
