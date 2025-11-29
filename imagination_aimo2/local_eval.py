@@ -1,3 +1,4 @@
+# SEED=42 bash scripts/run_cfg.sh cfgs/dpsk-qwen-1.5b.yaml data/reference_2.csv
 import os
 import re
 import sys
@@ -25,7 +26,7 @@ from transformers import set_seed
 import pandas as pd
 from lmdeploy import pipeline, TurbomindEngineConfig, GenerationConfig
 
-from imagination_aimo2.aggregators import *
+from aggregators import *
 
 ## ---- Setup logging utils ---- ##
 LEVEL = "INFO"

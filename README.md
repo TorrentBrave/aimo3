@@ -270,3 +270,6 @@ LLama-Factory 中的虚拟环境
   git clone --recurse-submodules <your-repo-url>
   或克隆后执行：
   git submodule update --init
+
+LLama-Factory webui
+  加载模型而下载了下来, 放到了~/.cache/huggingface/hub/ 我又把模型放到了 model/ 文件夹里
